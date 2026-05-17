@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kdcube",
+  "description": "Official KDCube Claude Code plugins — build KDCube bundles with live-docs-grounded assistance.",
+  "owner": {
+    "name": "KDCube",
+    "url": "https://kdcube.tech"
+  },
+  "plugins": [
+    {
+      "name": "kdcube-docs",
+      "description": "KDCube documentation MCP and workflow skill for Claude Code. Ships the kdcube-dev documentation MCP and a skill that guides Claude through bundle authoring, configuration, ReAct concepts, and the platform's surface taxonomy. Triggers on KDCube, bundles, entrypoint.py with platform decorators, kdcube.copilot, and platform/SDK questions.",
+      "author": {
+        "name": "KDCube",
+        "url": "https://kdcube.tech"
+      },
+      "category": "development",
+      "source": "./plugins/kdcube-docs",
+      "homepage": "https://github.com/kdcube/claude-plugins/blob/main/plugins/kdcube-docs/README.md"
+    }
+  ]
+}
