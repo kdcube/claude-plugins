@@ -1,5 +1,5 @@
 ---
-name: kdcube-scaffold
+name: scaffold
 description: Scaffold a new KDCube bundle with the right shape for the surfaces you need (chat, API, widget, MCP, cron)
 argument-hint: <bundle-name>
 allowed-tools: [Read, Write, Bash, Glob, Grep]
@@ -7,7 +7,7 @@ allowed-tools: [Read, Write, Bash, Glob, Grep]
 
 # KDCube Bundle Scaffolder
 
-User invocation: `/kdcube-docs:kdcube-scaffold <bundle-name>`
+User invocation: `/kdcube-docs:scaffold <bundle-name>`
 
 This is a user-invoked slash command that generates a new KDCube bundle scaffold grounded in the **live KDCube docs**, not from memory.
 

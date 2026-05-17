@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-17
+
+### Changed
+- **Breaking:** Slash commands renamed to drop the redundant
+  `kdcube-` prefix inside the `kdcube-docs:` namespace:
+  - `/kdcube-docs:kdcube-doc` → `/kdcube-docs:search`
+  - `/kdcube-docs:kdcube-scaffold` → `/kdcube-docs:scaffold`
+- Naming-convention table in the root README updated to show
+  unprefixed skill names as the recommended pattern (the plugin name
+  is already the namespace).
+
 ## [0.1.0] - 2026-05-17
 
 ### Added

@@ -18,8 +18,8 @@ This plugin solves that by shipping:
   - `search_knowledge(query, keywords?, root?, top_k?)` — ranked `ks:docs/...` paths
   - `read_knowledge(path)` — full document at an exact path
 - **Skill `kdcube`** — model-invoked. Triggers on KDCube concepts, `entrypoint.py` with platform decorators, and `kdcube.copilot@*` / `*.bundle@*` paths. Walks Claude through Q&A, bundle authoring, configuration, and runtime debugging.
-- **Slash command `/kdcube-docs:kdcube-scaffold <bundle-name>`** — interactively generates a new bundle skeleton with the right shape for the surfaces you need.
-- **Slash command `/kdcube-docs:kdcube-doc <question>`** — fast, citation-backed doc lookup.
+- **Slash command `/kdcube-docs:scaffold <bundle-name>`** — interactively generates a new bundle skeleton with the right shape for the surfaces you need.
+- **Slash command `/kdcube-docs:search <question>`** — fast, citation-backed doc lookup.
 
 ## First-run check
 
@@ -34,7 +34,7 @@ Claude should call `kdcube-dev:read_knowledge` and return the live quick-start. 
 1. **Build a new bundle.**
    > "I want to scaffold a KDCube bundle that exposes a public webhook and a cron job."
 
-   Triggers `/kdcube-docs:kdcube-scaffold` or the workflow skill; both pull the live decorator docs before generating code.
+   Triggers `/kdcube-docs:scaffold` or the workflow skill; both pull the live decorator docs before generating code.
 
 2. **Wrap existing code.**
    > "I have a Python script that pulls CSVs from S3 and emails reports. How do I wrap it as a KDCube bundle?"
@@ -42,7 +42,7 @@ Claude should call `kdcube-dev:read_knowledge` and return the live quick-start. 
    Triggers the `kdcube` workflow skill's wrapping-existing-code path; Claude reads `how-to-write-bundle-README.md` and proposes the adapter shape.
 
 3. **Configuration question.**
-   > "/kdcube-docs:kdcube-doc where do I put bundle secrets?"
+   > "/kdcube-docs:search where do I put bundle secrets?"
 
    Returns a quoted answer with `ks:docs/configuration/bundles-secrets-descriptor-README.md` citations.
 

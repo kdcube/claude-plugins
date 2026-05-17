@@ -70,7 +70,7 @@ A bundle is one folder with `entrypoint.py` exposing surfaces through decorators
 4. Generate the directory layout: `entrypoint.py`, `tools_descriptor.py`, `skills_descriptor.py`, `config/bundles.template.yaml`, `config/bundles.secrets.template.yaml`, `interface/README.md`, `tests/`.
 5. Keep product logic in reusable modules; the bundle is a **thin adapter** around it. Decorators and runtime calls stay close to `entrypoint.py`.
 
-The `/kdcube-docs:kdcube-scaffold` slash command automates steps 3–4 interactively.
+The `/kdcube-docs:scaffold` slash command automates steps 3–4 interactively.
 
 ### 4. Wrapping-existing-code path
 

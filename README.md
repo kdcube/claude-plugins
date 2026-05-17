@@ -21,7 +21,7 @@ After install, ask Claude a KDCube question (e.g. "what's in `ks:docs/quick-star
 
 | Plugin | What it ships |
 | --- | --- |
-| [`kdcube-docs`](plugins/kdcube-docs/README.md) | The `kdcube-dev` documentation MCP, a workflow skill that requires Claude to consult the docs before answering, and two slash commands (`/kdcube-docs:kdcube-scaffold` and `/kdcube-docs:kdcube-doc`). |
+| [`kdcube-docs`](plugins/kdcube-docs/README.md) | The `kdcube-dev` documentation MCP, a workflow skill that requires Claude to consult the docs before answering, and two slash commands (`/kdcube-docs:scaffold` and `/kdcube-docs:search`). |
 
 Future per-capability plugins (e.g. `kdcube-runtime`, `kdcube-bundles`, `kdcube-chat`) may be added once usage data shows which subsets people actually want.
 
@@ -48,10 +48,10 @@ The prefix groups the marketplace's plugins visually in `/help` and the plugin s
 | --- | --- | --- |
 | Marketplace | `kdcube` (fixed) | `/plugin marketplace add … kdcube` |
 | Plugin | `kdcube-<capability>` | `kdcube-docs`, future `kdcube-runtime` |
-| Skill / slash command inside a plugin | free-form kebab-case | `kdcube-scaffold`, `kdcube-doc` |
+| Skill / slash command inside a plugin | free-form kebab-case, no redundant prefix | `scaffold`, `search` (inside `kdcube-docs`) |
 | MCP server inside a plugin | `kdcube-<surface>` | `kdcube-dev` (docs MCP) |
 
-So when you see `/kdcube-docs:kdcube-scaffold` in `/help`, that's `<plugin>:<skill-name>`. Future plugins follow the same shape — e.g. a `kdcube-runtime` plugin might ship `/kdcube-runtime:deploy` and `/kdcube-runtime:reload`.
+So when you see `/kdcube-docs:scaffold` in `/help`, that's `<plugin>:<skill-name>`. Future plugins follow the same shape — e.g. a `kdcube-runtime` plugin might ship `/kdcube-runtime:deploy` and `/kdcube-runtime:reload`.
 
 ## Contributing
 

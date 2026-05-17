@@ -1,5 +1,5 @@
 ---
-name: kdcube-doc
+name: search
 description: Search the KDCube docs and answer a specific question with citations
 argument-hint: <question>
 allowed-tools: [Read]
@@ -7,7 +7,7 @@ allowed-tools: [Read]
 
 # KDCube Doc Lookup
 
-User invocation: `/kdcube-docs:kdcube-doc <question>`
+User invocation: `/kdcube-docs:search <question>`
 
 This is a user-invoked slash command for fast, citation-backed lookups against the KDCube docs. It is a thin wrapper that biases Claude toward the docs-first workflow.
 
