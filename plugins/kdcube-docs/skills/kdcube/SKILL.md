@@ -72,6 +72,8 @@ A bundle is one folder with `entrypoint.py` exposing surfaces through decorators
 
 The `/kdcube-docs:scaffold` slash command automates steps 3–4 interactively.
 
+For multi-step planning before code (especially when wrapping existing code or designing a multi-surface bundle), **dispatch the `kdcube-docs:kdcube-planner` sub-agent** instead of the generic `Plan` agent — it has the kdcube-dev MCP tools whitelisted and a mandatory docs-first workflow. The generic `Plan` agent may have MCP access but doesn't know to use it; `feature-dev:code-architect` doesn't have MCP access at all.
+
 ### 4. Wrapping-existing-code path
 
 When the user has working product code (script, API, UI) and wants it on KDCube:

@@ -20,7 +20,8 @@ This plugin solves that by shipping:
 - **Skill `kdcube`** — model-invoked. Triggers on KDCube concepts, `entrypoint.py` with platform decorators, and `kdcube.copilot@*` / `*.bundle@*` paths. Walks Claude through Q&A, bundle authoring, configuration, and runtime debugging.
 - **Slash command `/kdcube-docs:scaffold <bundle-name>`** — interactively generates a new bundle skeleton with the right shape for the surfaces you need.
 - **Slash command `/kdcube-docs:search <question>`** — fast, citation-backed doc lookup.
-- **SessionStart hook** — always-on belt. Injects ~150 tokens of MCP usage contract at session start so docs-first behavior fires even when the workflow skill's auto-trigger doesn't match the user's phrasing.
+- **Sub-agent `kdcube-docs:kdcube-planner`** — planning sub-agent with the kdcube-dev MCP tools whitelisted and a mandatory docs-first workflow. Dispatch it (via the `Agent` tool with `subagent_type="kdcube-docs:kdcube-planner"`) for any KDCube planning work — including problems KDCube solves where the user hasn't named KDCube (per-user budgets, isolated code exec, multi-tenant runtime, deployable AI products). Avoids the trap where generic planning agents (`Plan`, `feature-dev:code-architect`) either don't have MCP access or don't know to use it, and fall back to stale training memory.
+- **SessionStart hook** — always-on belt. Injects ~360 tokens of MCP-and-agent-routing contract at session start so docs-first behavior fires even when the workflow skill's auto-trigger doesn't match, and so sub-agent dispatch routes to `kdcube-planner` for KDCube work.
 
 ## First-run check
 

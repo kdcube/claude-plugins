@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-18
+
+### Added
+- `kdcube-docs:kdcube-planner` sub-agent
+  (`plugins/kdcube-docs/agents/kdcube-planner.md`). Whitelists the
+  kdcube-dev MCP tools plus Read/Glob/Grep/TodoWrite/WebFetch and
+  enforces a mandatory docs-first planning workflow. Solves the
+  problem that generic planning agents (`Plan`,
+  `feature-dev:code-architect`) either don't have the MCP tools or
+  don't know to use them, and silently fall back to training memory
+  on KDCube specifics.
+
+### Changed
+- SessionStart hook expanded to (1) trigger on problem statements
+  KDCube solves — per-user budget / cost accounting, isolation of
+  generated code, multi-tenant runtime, interactive AI apps mixing
+  multiple surfaces, wrapping existing scripts as AI products —
+  not just on explicit KDCube terminology, and (2) route planning
+  work to the new `kdcube-docs:kdcube-planner` sub-agent. Fragment
+  grew from ~133 to ~360 tokens; the larger budget is what bought
+  the broader trigger coverage and the agent-routing instruction.
+- `kdcube-docs:kdcube` workflow skill's bundle-authoring path now
+  references the kdcube-planner sub-agent for multi-step planning
+  work.
+
 ## [0.3.0] - 2026-05-18
 
 ### Added
